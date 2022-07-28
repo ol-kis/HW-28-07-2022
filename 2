@@ -1,0 +1,24 @@
+using System;
+class HelloWorld {
+  static void Main() {
+      //Задание 1
+    string a = Convert.ToString(Console.ReadLine());
+    Console.WriteLine(a[1]);
+    // Задание 2
+    string q = Convert.ToString(Console.ReadLine());
+    if (q.Length >= 3) {
+        Console.WriteLine(a[2]);
+    }
+    else {
+        Console.WriteLine("Нет третьей цифры");
+    }
+    //Задание 3
+    int w = Convert.ToInt32(Console.ReadLine());
+    if (w==6 ^ w==7) {
+        Console.WriteLine("Выходной день");
+    }
+    else {
+        Console.WriteLine("Будни");
+    }
+  }
+}
