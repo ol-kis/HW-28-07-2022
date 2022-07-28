@@ -1,0 +1,45 @@
+using System;
+class HelloWorld {
+  static void Main() {
+      //Задание 1
+    int a = Convert.ToInt32(Console.ReadLine());
+    int b = Convert.ToInt32(Console.ReadLine());
+    int c = Convert.ToInt32(Console.ReadLine());
+    if (a>b & a>c) {
+        Console.WriteLine("Максимальное число " + a); 
+    }
+    else {
+        if (b>a & b>c) {
+            Console.WriteLine("Максимальное число " + b);
+        }
+        else {
+            Console.WriteLine("Максимальное число " + c);
+        }
+    }
+    //Задание 2
+    int q = Convert.ToInt32(Console.ReadLine());
+    int w = Convert.ToInt32(Console.ReadLine());
+    if (q>w){
+        Console.WriteLine("Максимальное число " + q); 
+    }
+    else {
+        Console.WriteLine("Максимальное число " + w);  
+    }
+    //Задание 3
+    int e = Convert.ToInt32(Console.ReadLine());
+    if (e % 2 == 0) {
+        Console.WriteLine("Четное");
+    }
+    else {
+         Console.WriteLine("Нечетное");
+    }
+    //Задание 4
+    int r = Convert.ToInt32(Console.ReadLine());
+    for (int i=0;i<=r;i++) {
+        if (i % 2 == 0) {
+            Console.WriteLine(i);
+        }
+  }
+}
+}
+ 
