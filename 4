@@ -1,0 +1,21 @@
+using System;
+class HelloWorld {
+  static void Main() {
+      //Задание 1
+    Console.Write("Введите два числа через запятую: ");
+    string[] list_num = Console.ReadLine().Split(',');
+    int num=Convert.ToInt32(Math.Pow(Convert.ToInt32(list_num[0]),Convert.ToInt32(list_num[1])));
+    Console.WriteLine("Если возвести число "+ list_num[0]+" в степень " +list_num[1]+" получится: " +num);
+    //Задание 2
+    Console.Write("Введите число ");
+    int sum_num=0;
+    string base_num=Console.ReadLine();
+    for (int i=0;i<base_num.Length;i++){
+        sum_num=sum_num+Convert.ToInt32(base_num[i].ToString());
+    }
+    Console.WriteLine("Сумма цифр в числе "+base_num+ " равно: "+sum_num);
+    
+    
+    
+  }
+}
