@@ -1,0 +1,37 @@
+using System;
+class HelloWorld {
+  static void Main() {
+      //задание 1
+      
+    Console.WriteLine("Введите несколько числе через запятую");
+    string [] numbers=Console.ReadLine().Split(',');
+    int count=0;
+    for (int i=0;i<numbers.Length;i++) {
+        if (Convert.ToInt32(numbers[i])>0) {
+            count=count+1; 
+            
+        }
+    }
+    
+    Console.WriteLine("Положительных чисел: "+ count);
+    //Задание 2 
+    //Напишите программу, которая найдёт точку пересечения двух прямых, 
+    //заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; 
+    //значения b1, k1, b2 и k2 задаются пользователем.
+    Console.WriteLine("Необходимо найти точку пересения двух прямых");
+    Console.WriteLine("Введите первое число");
+    double r1=Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Введите первое второе");
+    double b1=Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Введите первое третье");
+    double r2=Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Введите первое четвертое");
+    double b2=Convert.ToInt32(Console.ReadLine());
+    double x=(-(b1-b2)/(r1-r2));
+    double y= r1*x+b1;
+    Console.WriteLine("Координаты точкы пересения двух прямых:"+ "("+x+","+y+")");
+   
+    
+    
+}
+}
