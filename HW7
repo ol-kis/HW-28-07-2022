@@ -1,0 +1,76 @@
+using System;
+class HelloWorld {
+  static void Main() {
+    //задание 1
+    Console.WriteLine("Введите количество строк в массиве");
+    int row=Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Введите количество столбцов в массиве");
+    int column=Convert.ToInt32(Console.ReadLine());
+    int [,] numbers= new int[row,column];
+    for (int i=0;i<row;i++){
+        for (int j=0;j<column;j++){
+            numbers[i,j]=new Random().Next(0,10);
+        }
+    }
+    for (int i=0;i<row;i++){
+        for (int j=0;j<column;j++){
+            Console.Write($"{numbers[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+   //задание 2
+    Console.WriteLine("Введите число или координаты числа в массиве через запятую");
+    string m=Console.ReadLine();
+    bool b=m.Contains(",");
+    //Если ввели два числа через запятую- нахождение числа по координатам
+    if (b== true ) {
+        string [] numbers2=m.Split(',');
+        int row_of_user=Convert.ToInt32(numbers2[0]);
+        Console.WriteLine(row_of_user);
+        int column_of_user=Convert.ToInt32(numbers2[1]);
+        Console.WriteLine(column_of_user);
+        if (row_of_user<=row || column_of_user<=column) {
+            Console.WriteLine(numbers[row_of_user,column_of_user]);
+        }
+        else{
+            Console.WriteLine("Вы ввели числа, больше размерности изначального массива");
+            
+        }
+      
+    }
+    //Если ввели одно число:
+    else{
+        //Нахождение координат и проверка - если число в массиве
+        int row_of_user_numbers=0;
+        int column_of_user_numbers=0;
+        int count=0;
+        for (int i=0;i<row;i++){
+            for (int j=0;j<column;j++){
+                if (numbers[i,j]==Convert.ToInt32(m)) {
+                    row_of_user_numbers=i+1;
+                    column_of_user_numbers=j+1;
+                    count=1;
+                }
+            }
+        }
+        if (count==1){
+           Console.WriteLine("Координаты числа " + m +" равны: ("+row_of_user_numbers+","+ column_of_user_numbers+")"); 
+        }
+        else{
+            
+            Console.WriteLine("Такого числа нет в массиве "); 
+        }
+        
+    }
+    
+    //задание 3 
+    for (int i=0;i<column;i++){
+        double summ=0;
+        for (int j=0;j<row;j++){
+            summ=summ+numbers[j,i];
+        }
+         Console.WriteLine("Среднее арифметическое элементов в "+(i+1) + " столбце равно: "+Math.Round(summ/row,2)); 
+    }
+    
+  }
+}
