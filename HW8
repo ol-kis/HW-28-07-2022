@@ -1,0 +1,66 @@
+//задание 1 
+    Console.WriteLine("Введите количество строк в массиве");
+    int row=Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Введите количество столбцов в массиве");
+    int column=Convert.ToInt32(Console.ReadLine());
+    int [,] numbers= new int[row,column];
+    for (int i=0;i<row;i++){
+        for (int j=0;j<column;j++){
+            numbers[i,j]=new Random().Next(0,10);
+        }
+    }
+    for (int i=0;i<row;i++){
+        for (int count=0;count<column-1;count++){
+            for (int j=0;j<column-1;j++){
+                if (numbers[i,j]<numbers[i,j+1]){
+                    int help_num=numbers[i,j];
+                    numbers[i,j]=numbers[i,j+1];
+                    numbers[i,j+1]=help_num;
+                    
+                }
+            }
+        }
+    }
+    //задание 2 
+    int summa_row_help=100;
+    int row_min_sum=0;
+    
+    for (int i=0;i<row;i++){
+        int summa_row=0;
+        for (int j=0;j<column;j++){
+            summa_row=summa_row+numbers[i,j];
+        }
+        if (summa_row<summa_row_help){
+            row_min_sum=i;
+            summa_row_help=summa_row;
+        }
+    }
+    
+    Console.WriteLine("Строка с минимальной суммой: "+(row_min_sum+1));
+    //задание 3
+    int [,] numbers2= new int[row,column];
+    int [,] numbers_multiplier= new int[row,column];
+    for (int i=0;i<row;i++){
+        for (int j=0;j<column;j++){
+            numbers2[i,j]=new Random().Next(0,10);
+        }
+    }
+    
+    
+    for (int i=0;i<row;i++){
+        for (int j=0;j<column;j++){
+            numbers_multiplier[i,j]=numbers[i,j]*numbers2[i,j];
+        }
+        
+    }
+    
+    for (int i=0;i<row;i++){
+        for (int j=0;j<column;j++){
+            Console.Write($"{numbers[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+    
+    
+  }
+}
