@@ -1,0 +1,22 @@
+using System;
+class HelloWorld {
+  static void Main() {
+    //Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
+    Console.WriteLine("Напишите первое натуральное число");
+    int f_num=Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Напишите второе натуральное число");
+    int s_num=Convert.ToInt32(Console.ReadLine());
+    for (int i=f_num;i<=s_num;i++){
+        Console.Write(i+", ");
+    }
+    Console.WriteLine();
+    //Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+    int summ=0;
+    for (int i=f_num;i<=s_num;i++){
+        summ=summ+i;
+    }
+    Console.WriteLine("Cумма чисел в промежутке между "+f_num+" и "+ s_num+" равно "+summ);
+    
+  }
+  
+}
